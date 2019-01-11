@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.url">jdbc:mysql://172.16.65.200:3306/hibernate?useUnicode=true&amp;characterEncoding=UTF8</property>
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">123456</property>
+
+         <!--DB schema will be updated if needed -->
+        <property name="hbm2ddl.auto">create</property>
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+        <property name="hibernate.current_session_context_class">thread</property>
+        <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+
+        <!-- Mapping Entity Class -->
+        <!--<mapping class="oto_fk.Students" />-->
+        <!--<mapping class="oto_fk.IdCard" />-->
+
+        <!--<mapping class="mto_fk.ClassRoom" />-->
+        <!--<mapping class="mto_fk.Students" />-->
+
+        <!--<mapping class="otm_fk.ClassRoom" />-->
+        <!--<mapping class="otm_fk.Students" />-->
+
+        <mapping class="mtm_fk.Teachers" />
+        <mapping class="mtm_fk.Students" />
+    </session-factory>
+</hibernate-configuration>
